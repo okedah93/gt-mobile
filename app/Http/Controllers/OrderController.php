@@ -18,13 +18,18 @@ class OrderController extends Controller
 
     public function index()
     {
-        return view('order');
+        $validate = $this->validate($request,[
+            'destination' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'router_quantity' => 'required'
+        ]);
+        if(!$validate){
+            return view('order', compact('request'));
+        }
+        else {
+            return redirect('/');
+        }
     }
-
-    public function delivery()
-    {
-    	return view('delivery');
-    }
-
 
 }

@@ -1,9 +1,11 @@
 <?php
 
 Route::get('/', array('as'=>'home.index', 'uses' => 'HomeController@index'));
+Route::get('/do_order', array('as'=>'do.order', 'uses' => 'HomeController@do_order'));
 Route::post('/do_order', array('as'=>'do.order', 'uses' => 'HomeController@do_order'));
 
-Route::get('/delivery', array('as'=>'delivery', 'uses' => 'OrderController@delivery'));
+Route::get('/delivery', array('as'=>'delivery', 'uses' => 'DeliveryController@index'));
+Route::post('/delivery', array('as'=>'delivery', 'uses' => 'DeliveryController@index'));
 
 Route::get('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));
 Route::post('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));
