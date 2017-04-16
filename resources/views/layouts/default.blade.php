@@ -18,7 +18,7 @@
             margin: 0 auto;
         }
     </style>
-    <title>Welcome to CodeIgniter</title>
+    <title>GT-Mobile</title>
 </head>
 <body id="index">
 <div id="mainWrap">
