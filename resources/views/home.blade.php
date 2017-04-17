@@ -41,7 +41,7 @@
                 <div class="row">
                     {!! Form::open(array('route' => 'do.order', 'id' => 'form_data', 'method' => 'POST')) !!}
                     @if (count($errors) > 0)
-                        <div class="error-messages">
+                        <div class="alert alert-danger">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>

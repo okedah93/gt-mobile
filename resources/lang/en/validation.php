@@ -99,6 +99,18 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'destination' => [
+            'required'  => 'Silahkan Pilih Negara Tujuan Anda.',
+        ],
+        'startdate' => [
+            'required'  => 'Silahkan Isi Tanggal Keberangkatan Anda.',
+        ],
+        'enddate' => [
+            'required'  => 'Silahkan Isi Tanggal Kepulangan Anda.',
+        ],
+        'router_quantity' => [
+            'required'  => 'Silahkan Isi Jumlah Router yang Anda Butuhkan.',
+        ],
     ],
 
     /*

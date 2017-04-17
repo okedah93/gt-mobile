@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use Validator;
 use Illuminate\Http\Request;
-use Session;
-use Debugbar;
-use Mail;
+use App\Http\Controllers\Controller;
+use View;
+
 
 class OrderController extends Controller
 {
@@ -18,42 +18,43 @@ class OrderController extends Controller
 
     public function index()
     {
-        if(isset($request)){
-            $validate = $this->validate($request,[
-                'destination' => 'required',
-                'startdate' => 'required',
-                'enddate' => 'required',
-                'router_quantity' => 'required'
-            ]);
-            if(!$validate){
-                return view('order', compact('request'));
-            }
-        }
-        else {
-            return redirect('/');
-        }
-    }
-    public function do_delivery(Request $request)
-    {
-        // foreach($request->all() as $val){
-        //     echo($val);
-        // }
-        // dump($request);
-        // die();
-        $validate = $this->validate($request,[
+        $rules = array(
             'destination' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
             'router_quantity' => 'required'
-        ]);
-        
-        if(!$validate){
-            //die('a');
-            return view('delivery', compact('request'));
+            );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()){
+            //die('b');
+            return redirect('/')->withErrors($validator);
         }
         else {
+            //die('a');
+            //data belum di store dr submit button order page
+            return view('delivery', compact('request'));
+        }
+    }
+    public function do_delivery(Request $request)
+    {
+       $rules = array(
+            'destination' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'router_quantity' => 'required'
+            );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()){
             //die('b');
-            return view('home');
+            return redirect('/')->withErrors($validator);
+        }
+        else {
+            //die('a');
+            return view('delivery', compact('request'));
         }
     }
 }
