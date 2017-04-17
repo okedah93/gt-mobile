@@ -18,20 +18,7 @@ class DeliveryController extends Controller
 
     public function index()
     {
-        if(isset($request)){
-            $validate = $this->validate($request,[
-                'destination' => 'required',
-                'startdate' => 'required',
-                'enddate' => 'required',
-                'router_quantity' => 'required'
-            ]);
-            if(!$validate){
-                return view('delivery', compact('request'));
-            }
-        }
-        else {
-            return redirect('/');
-        }
+        return view('delivery', compact('request'));
     }
 
     public function payment_review()

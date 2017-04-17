@@ -18,18 +18,42 @@ class OrderController extends Controller
 
     public function index()
     {
+        if(isset($request)){
+            $validate = $this->validate($request,[
+                'destination' => 'required',
+                'startdate' => 'required',
+                'enddate' => 'required',
+                'router_quantity' => 'required'
+            ]);
+            if(!$validate){
+                return view('order', compact('request'));
+            }
+        }
+        else {
+            return redirect('/');
+        }
+    }
+    public function do_delivery(Request $request)
+    {
+        // foreach($request->all() as $val){
+        //     echo($val);
+        // }
+        // dump($request);
+        // die();
         $validate = $this->validate($request,[
             'destination' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
             'router_quantity' => 'required'
         ]);
+        
         if(!$validate){
-            return view('order', compact('request'));
+            //die('a');
+            return view('delivery', compact('request'));
         }
         else {
-            return redirect('/');
+            //die('b');
+            return view('home');
         }
     }
-
 }

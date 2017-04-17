@@ -206,6 +206,12 @@ i{
 	color: red;
   font-size: 30px;
 }
+
+/*HOME - Error Messages*/
+.error-messages{
+  color : red;
+} 
+
 /*HOME - TESTIMONIAL CSS*/
 .owl-carousel .owl-wrapper:after {
   display: block;

@@ -1,6 +1,9 @@
 @extends('layouts.default')
 
 @section('content')
+<?php 
+$quantity = $request['router_quantity'];
+?>
 <div id="book-review" class="main-content">
     <div class="container">
         <div class="row">
@@ -30,12 +33,12 @@
                         </div>
                         <div class="form-group">
                             <label for="start-date">Perjalanan Dimulai</label>
-                            <input type="text" class="form-control" id="startdate" aria-describedby="startdate" placeholder="">
+                            <input type="text" class="form-control" id="startdate" aria-describedby="startdate" placeholder="" value="{{ $request->startdate }}">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                         <div class="form-group">
                             <label for="finish-date">Perjalanan Selesai</label>
-                            <input type="text" class="form-control" id="enddate" aria-describedby="enddate" placeholder="">
+                            <input type="text" class="form-control" id="enddate" aria-describedby="enddate" placeholder="" value="{{ $request->enddate }}">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                         <div class="row">
@@ -47,31 +50,31 @@
                                 <div class="radio radio-primary">
 
                                     <label for="radio1">
-                                        <input type="radio" name="radio1" id="radio1" value="option1">1
+                                        <input type="radio" name="radio1" id="radio1" value="option1" <?php if($quantity==1) echo "checked"?>>1
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
                                     <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option2">2
+                                        <input type="radio" name="radio1" id="radio2" value="option2" <?php if($quantity==2) echo "checked"?>>2
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
                                     <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option3">3
+                                        <input type="radio" name="radio1" id="radio2" value="option3" <?php if($quantity==3) echo "checked"?>>3
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
                                     <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option4">4
+                                        <input type="radio" name="radio1" id="radio2" value="option4"<?php if($quantity==4) echo "checked"?>>4
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
                                     <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option5">5
+                                        <input type="radio" name="radio1" id="radio2" value="option5"<?php if($quantity==5) echo "checked"?>>5
                                     </label>
                                 </div>
                             </div>

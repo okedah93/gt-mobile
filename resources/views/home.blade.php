@@ -41,7 +41,7 @@
                 <div class="row">
                     {!! Form::open(array('route' => 'do.order', 'id' => 'form_data', 'method' => 'POST')) !!}
                     @if (count($errors) > 0)
-                        <div class="alert alert-danger">
+                        <div class="error-messages">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -65,15 +65,20 @@
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('startdate') ? ' has-error' : '' }}">
                                 <label for="start-date">Perjalanan Dimulai</label>
-                                <input type="text" class="form-control" id="startdate" name="startdate" aria-describedby="startdate" placeholder="" value="{{ old('startdate') }}">
+                                <input type="text" class="form-control" id="startdate" name="startdate" aria-describedby="startdate" placeholder="Start Date" value="{{ old('startdate') }}">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group{{ $errors->has('enddate') ? ' has-error' : '' }}">
                                 <label for="finish-date">Perjalanan Selesai</label>
-                                <input type="text" class="form-control" id="enddate" name="enddate" aria-describedby="enddate" placeholder="" value="{{ old('enddate') }}">
+                                <input type="text" class="form-control" id="enddate" name="enddate" aria-describedby="enddate" placeholder="End Date" value="{{ old('startdate') }}">
                             </div>
                         </div>
+                        <?php 
+                        /*
+                            <?php echo date("d-M-Y");?>">
+                        */
+                        ?>
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-6 col-xs-6">
