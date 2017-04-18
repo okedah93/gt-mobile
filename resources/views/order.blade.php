@@ -25,6 +25,9 @@ $quantity = $request['router_quantity'];
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
+                        {!! Form::open([
+                            'route' => 'order'
+                        ]) !!}
                         <div class="form-group">
                             <label for="destination">Kemana Tujuan Perjalanan Anda?</label>
                             <select class="form-control" id="destination" disabled>
@@ -102,7 +105,7 @@ $quantity = $request['router_quantity'];
                             <div class="wifi-total">
                                 <div class="row">
                                     <div class="title-total title-wifi-total col-md-8 col-sm-8 col-xs-12">
-                                        <h5>Wifi x1 <br><span>Dari Tanggal 2017-01-01 ke 2017-01-02</span></h5>
+                                        <h5>Wifi x{{$quantity}} <br><span>Dari Tanggal {{$request->startdate}} ke {{$request->enddate}}</span></h5>
                                     </div>
                                     <div class="price-total price-wifi-total col-md-4 col-sm-4 col-xs-12">
                                         <h5>IDR 250.000,-</h5>
@@ -141,7 +144,10 @@ $quantity = $request['router_quantity'];
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <a type="submit" class="btn btn-primary" href="{{ url('/delivery') }}">Next Step</a>
+                       <!-- <a type="submit" class="btn btn-primary" href="{{ //url('/delivery') }}">Next Step</a>-->
+                        {!! Form::submit('Next Step', ['class' => 'btn btn-primary']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </form>
             </div>
