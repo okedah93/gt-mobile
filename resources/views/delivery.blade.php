@@ -87,7 +87,7 @@
 						</div>
 					</div>
 					<div class="col-md-12">
-						<a type="submit" class="btn btn-primary" href="">Next Step</a>
+                        <a type="submit" class="btn btn-primary" href="{{ url('/payment') }}">Next Step</a>
 					</div>
 				</form>
 					

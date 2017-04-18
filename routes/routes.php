@@ -8,8 +8,8 @@ Route::post('/do_order', array('as'=>'do.order', 'uses' => 'HomeController@do_or
 Route::get('/delivery', array('as'=>'delivery', 'uses' => 'OrderController@do_delivery'));
 Route::post('/delivery', array('as'=>'delivery', 'uses' => 'OrderController@do_delivery'));
 
-Route::get('/payment', array('as'=>'payment', 'uses' => 'DeliveryController@payement_review'));
-Route::post('/payment', array('as'=>'payment', 'uses' => 'DeliveryController@payement_review'));
+Route::get('/payment', array('as'=>'payment_review', 'uses' => 'DeliveryController@payment_review'));
+Route::post('/payment', array('as'=>'payment_review', 'uses' => 'DeliveryController@payment_review'));
 
 Route::get('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));
 Route::post('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));

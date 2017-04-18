@@ -157,7 +157,7 @@
 						<!-- <div class="checkbox">
 							<label><input type="checkbox" value="">Option 2</label>
 						</div> -->
-						<a type="submit" class="btn btn-primary" href="<?php echo base_url()?>home/booksuccess">submit</a>
+						<a type="submit" class="btn btn-primary" href="">submit</a>
 					</div>
 				</form>	
 			</div>	
