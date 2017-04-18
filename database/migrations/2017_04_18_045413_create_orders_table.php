@@ -27,6 +27,15 @@ class CreateOrdersTable extends Migration
             $table->string('address2');
             $table->string('postCode');
             $table->string('province');
+            $table->string('contactName');
+            $table->string('phoneNumber');
+            $table->string('email');
+            $table->string('accountName');
+            $table->string('passportNo');
+            $table->string('bankName');
+            $table->string('accNo');
+            $table->string('paymentMethod');            
+            $table->string('totalTransaction');
             $table->timestamps();
         });
     }
