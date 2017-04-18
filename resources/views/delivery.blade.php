@@ -5,8 +5,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 main-content-text">
-				
 				<form class="row">
+                {!! Form::open(array('route' => 'delivery', 'id' => 'form_data', 'method' => 'POST')) !!}
+                <!-- route nya blm di ganti -->
 					<div class="col-md-12">
 						<div class="book-review-title">
 							
@@ -29,14 +30,14 @@
 							<label for="destination">How and Where to take the Wifi?</label>
 							<div class="radio radio-primary">
 						            
-					            <label for="radio1">
-					                <input type="radio" name="radio1" id="radio1" value="option1">Pengambilan Sendiri di..
+					            <label for="sent_pick">
+					                <input type="radio" name="sent_order" id="sent_pick" value="pick_up">Pengambilan Sendiri di..
 					            </label>
 					        </div>
 					        <div class="radio radio-primary">
 						            
-					            <label for="radio1">
-					                <input type="radio" name="radio1" id="radio1" value="option1">Kurir
+					            <label for="sent_courier">
+					                <input type="radio" name="sent_order" id="sent_courier" value="courier">Kurir
 					            </label>
 					        </div>
 						</div>
@@ -56,14 +57,14 @@
 							<label for="destination">How and Where to take the Wifi?</label>
 							<div class="radio radio-primary">
 						            
-					            <label for="radio1">
-					                <input type="radio" name="radio1" id="radio1" value="option1">Pengambilan Sendiri di..
+					            <label for="take_pick">
+					                <input type="radio" name="take_order" id="take_pick" value="pick_up">Pengambilan Sendiri di..
 					            </label>
 					        </div>
 					        <div class="radio radio-primary">
 						            
-					            <label for="radio1">
-					                <input type="radio" name="radio1" id="radio1" value="option1">Kurir
+					            <label for="take_courier">
+					                <input type="radio" name="take_order" id="take_courier" value="courier">Kurir
 					            </label>
 					        </div>
 						</div>

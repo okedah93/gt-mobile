@@ -33,6 +33,12 @@ class HomeController extends Controller
         }
         else {
             //die('a');
+            session([
+                'destination'       =>  $request['destination'],
+                'startdate'         =>  $request['startdate'],
+                'enddate'           =>  $request['enddate'],
+                'router_quantity'   =>  $request['router_quantity'],
+            ]);
             return view('order', compact('request'));
         }
     }

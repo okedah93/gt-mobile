@@ -25,23 +25,21 @@ $quantity = $request['router_quantity'];
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        {!! Form::open([
-                            'route' => 'order'
-                        ]) !!}
+                    {!! Form::open(array('route' => 'delivery', 'id' => 'form_data', 'method' => 'POST')) !!}
                         <div class="form-group">
                             <label for="destination">Kemana Tujuan Perjalanan Anda?</label>
-                            <select class="form-control" id="destination" disabled>
+                            <select class="form-control" id="destination" name="destination" disabled>
                                 <option>{{$request->destination}}</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="start-date">Perjalanan Dimulai</label>
-                            <input type="text" class="form-control" id="startdate" aria-describedby="startdate" placeholder="" value="{{ $request->startdate }}">
+                            <input type="text" class="form-control" id="startdate" name="startdate" aria-describedby="startdate" placeholder="" value="{{ $request->startdate }}" disabled="">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                         <div class="form-group">
                             <label for="finish-date">Perjalanan Selesai</label>
-                            <input type="text" class="form-control" id="enddate" aria-describedby="enddate" placeholder="" value="{{ $request->enddate }}">
+                            <input type="text" class="form-control" id="enddate" name="enddate" aria-describedby="enddate" placeholder="" value="{{ $request->enddate }}" disabled="">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                         <div class="row">
@@ -53,31 +51,31 @@ $quantity = $request['router_quantity'];
                                 <div class="radio radio-primary">
 
                                     <label for="radio1">
-                                        <input type="radio" name="radio1" id="radio1" value="option1" <?php if($quantity==1) echo "checked"?>>1
+                                        <input type="radio" name="router_quantity" id="radio1" value="option1" disabled=""<?php if($quantity==1) echo "checked"?>>1
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
                                     <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option2" <?php if($quantity==2) echo "checked"?>>2
+                                        <input type="radio" name="router_quantity" id="radio2" value="option2" disabled=""<?php if($quantity==2) echo "checked"?>>2
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
-                                    <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option3" <?php if($quantity==3) echo "checked"?>>3
+                                    <label for="radio3">
+                                        <input type="radio" name="router_quantity" id="radio3" value="option3" disabled=""<?php if($quantity==3) echo "checked"?>>3
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
-                                    <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option4"<?php if($quantity==4) echo "checked"?>>4
+                                    <label for="radio4">
+                                        <input type="radio" name="router_quantity" id="radio4" value="option4" disabled=""<?php if($quantity==4) echo "checked"?>>4
                                     </label>
                                 </div>
                                 <div class="radio radio-primary">
 
-                                    <label for="radio2">
-                                        <input type="radio" name="radio1" id="radio2" value="option5"<?php if($quantity==5) echo "checked"?>>5
+                                    <label for="radio5">
+                                        <input type="radio" name="router_quantity" id="radio5" value="option5" disabled=""<?php if($quantity==5) echo "checked"?>>5
                                     </label>
                                 </div>
                             </div>
@@ -105,7 +103,7 @@ $quantity = $request['router_quantity'];
                             <div class="wifi-total">
                                 <div class="row">
                                     <div class="title-total title-wifi-total col-md-8 col-sm-8 col-xs-12">
-                                        <h5>Wifi x{{$quantity}} <br><span>Dari Tanggal {{$request->startdate}} ke {{$request->enddate}}</span></h5>
+                                        <h5>Wifi x{{$quantity}}<br><span>Dari Tanggal {{$request->startdate}} ke {{$request->enddate}}</span></h5>
                                     </div>
                                     <div class="price-total price-wifi-total col-md-4 col-sm-4 col-xs-12">
                                         <h5>IDR 250.000,-</h5>
@@ -144,11 +142,9 @@ $quantity = $request['router_quantity'];
                         </div>
                     </div>
                     <div class="col-md-12">
-                       <!-- <a type="submit" class="btn btn-primary" href="{{ //url('/delivery') }}">Next Step</a>-->
-                        {!! Form::submit('Next Step', ['class' => 'btn btn-primary']) !!}
-
-                        {!! Form::close() !!}
+                        <a type="submit" class="btn btn-primary" href="{{ url('/delivery') }}">Next Step</a>
                     </div>
+                    {!! Form::close() !!}
                 </form>
             </div>
         </div>

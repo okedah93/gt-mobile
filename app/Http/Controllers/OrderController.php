@@ -39,15 +39,16 @@ class OrderController extends Controller
     }
     public function do_delivery(Request $request)
     {
-       $rules = array(
+        $rules = array(
             'destination' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
             'router_quantity' => 'required'
             );
-
-        $validator = Validator::make($request->all(), $rules);
-
+        // dd(session());
+        // die();
+        $validator = Validator::make($request->session()->all(), $rules);
+        
         if($validator->fails()){
             //die('b');
             return redirect('/')->withErrors($validator);
