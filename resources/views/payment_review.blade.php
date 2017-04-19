@@ -13,10 +13,10 @@
 								<h3 class="order-title title-box">order</h3>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 book-review-content">
-								<h3 class="delivery-title title-box">delivery</h3>
+								<h3 class="delivery-title title-box" style="opacity: 1;">delivery</h3>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 book-review-content">
-								<h3 class="payment-title title-box">payment</h3>
+								<h3 class="payment-title title-box" style="opacity: 1;">payment</h3>
 							</div>
 							
 						</div>
