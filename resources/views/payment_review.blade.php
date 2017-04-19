@@ -158,6 +158,7 @@
 							<label><input type="checkbox" value="">Option 2</label>
 						</div> -->
 						<a type="submit" class="btn btn-primary" href="">submit</a>
+                    {!! Form::close() !!}
 					</div>
 				</form>	
 			</div>	

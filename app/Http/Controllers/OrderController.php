@@ -47,14 +47,15 @@ class OrderController extends Controller
             );
         // dd(session());
         // die();
-        $validator = Validator::make($request->session()->all(), $rules);
+
+        $session = $request->session()->all();
+
+        $validator = Validator::make($session, $rules);
         
         if($validator->fails()){
-            //die('b');
             return redirect('/')->withErrors($validator);
         }
         else {
-            //die('a');
             return view('delivery', compact('request'));
         }
     }

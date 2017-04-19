@@ -23,7 +23,25 @@ class DeliveryController extends Controller
 
     public function payment_review()
     {
-        return view('payment_review');
+        //add delivery address etc
+        $rules = array(
+            'destination' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'router_quantity' => 'required'
+            );
+        // dd(session());
+        // die();
+        $session = $request->session()->all();
+
+        $validator = Validator::make($session, $rules);
+        
+        if($validator->fails()){
+            return redirect('/')->withErrors($validator);
+        }
+        else {
+            return view('payment', compact('request'));
+        }    
     }
 
 }

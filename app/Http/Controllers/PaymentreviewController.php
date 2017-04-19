@@ -18,7 +18,28 @@ class PaymentreviewController extends Controller
 
     public function index()
     {
-        return view('payment_review');
+        $rules = array(
+            'destination' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'router_quantity' => 'required'
+            );
+        // dd(session());
+        // die();
+        $validator = Validator::make($request->session()->all(), $rules);
+        
+        if($validator->fails()){
+            //die('b');
+            return redirect('/')->withErrors($validator);
+        }
+        else {
+            //die('a');
+            return view('payment', compact('request'));
+        }
     }
 
+    public function do_payment(Request $request)
+    {
+
+    }
 }

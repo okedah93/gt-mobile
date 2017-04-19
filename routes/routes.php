@@ -11,6 +11,9 @@ Route::post('/delivery', array('as'=>'delivery', 'uses' => 'OrderController@do_d
 Route::get('/payment', array('as'=>'payment_review', 'uses' => 'DeliveryController@payment_review'));
 Route::post('/payment', array('as'=>'payment_review', 'uses' => 'DeliveryController@payment_review'));
 
+Route::get('/do_payment', array('as'=>'do.payment', 'uses' => 'PaymentreviewController@do_payment'));
+Route::post('/do_payment', array('as'=>'do.payment', 'uses' => 'PaymentreviewController@do_payment'));
+
 Route::get('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));
 Route::post('home', array ('as'=>'home.index', 'uses' => 'HomeController@index'));
 //Route::get('/order', array('as'=>'order.index', 'uses' => 'OrderController@index'));
