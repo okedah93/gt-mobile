@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 main-content-text">
 				<form class="row">
-                {!! Form::open(array('route' => 'payment', 'id' => 'form_data', 'method' => 'POST')) !!}
+                {!! Form::open(array('url' => 'payment_review', 'id' => 'form_data', 'method' => 'POST')) !!}
                 <!-- route nya blm di ganti -->
 					<div class="col-md-12">
 						<div class="book-review-title">
@@ -31,12 +31,12 @@
 							
 							<div class="radio radio-primary">
 						            
-					            <label for="sent_pick">
-					                <input type="radio" name="sent_order" id="sent_pick" value="pick_up">Pengambilan Sendiri di..
+					            <label for="send_pick">
+					                <input type="radio" name="send_order" id="send_pick" value="pick_up">Pengambilan Sendiri di..
 					            </label>
 
 								<div class="form-group">
-									<select class="form-control" id="list-address">
+									<select class="form-control" id="list_address_send">
 										<option>Office 1</option>
 										<option>Office 2</option>
 									</select>
@@ -45,21 +45,21 @@
 
 					        <div class="radio radio-primary">
 						            
-					            <label for="sent_courier">
-					                <input type="radio" name="sent_order" id="sent_courier" value="courier">Kurir
+					            <label for="send_courier">
+					                <input type="radio" name="send_order" id="send_courier" value="courier">Kurir
 					            </label>
 
 					            <div class="form-group">
-									<textarea class="form-control" rows="2" id="address1" placeholder="Address 1"></textarea>
+									<textarea class="form-control" rows="2" id="send_address1" placeholder="Address 1"></textarea>
 								</div>
 								<div class="form-group">
-									<textarea class="form-control" rows="2" id="address2" placeholder="Address 2"></textarea>
+									<textarea class="form-control" rows="2" id="send_address2" placeholder="Address 2"></textarea>
 								</div>
 								<div class="form-group">						
 									<input type="number" class="form-control" id="postcode" placeholder="Post Code">
 								</div>
 								<div class="form-group">
-									<select class="form-control" id="sel1">
+									<select class="form-control" id="provice_send">
 										<option disabled selected>-PROVINCE-</option>
 										<option>2</option>
 										<option>3</option>
@@ -73,23 +73,59 @@
 						<h3><i class="fa fa-reply" aria-hidden="true"></i>Return Methods</h3>
 						<form>
 						<div class="form-group">
-							<label for="destination">How and Where to take the Wifi?</label>
+							<label for="destination">How and Where to get the Wifi?</label>
 							<div class="radio radio-primary">
 						            
-					            <label for="take_pick">
-					                <input type="radio" name="take_order" id="take_pick" value="pick_up">Pengambilan Sendiri di..
+					            <label for="get_pick">
+					                <input type="radio" name="take_order" id="get_pick" value="pick_up">Pengembalian ke..
 					            </label>
+					            <div class="form-group">
+									<select class="form-control" id="list_address_get">
+										<option>Office 1</option>
+										<option>Office 2</option>
+									</select>
+								</div>
 					        </div>
 					        <div class="radio radio-primary">
 						            
-					            <label for="take_courier">
-					                <input type="radio" name="take_order" id="take_courier" value="courier">Kurir
-					            </label>
+					            <div class="radio radio-primary">
+						            
+						            <label for="get_courier">
+						                <input type="radio" name="send_order" id="send_courier" value="courier">Kurir
+						            </label>
+								</div>
+
+					            <div class="form-group">
+						            <label for="get_address">
+										<input type="checkbox" class="" id="get_address" value="get_address">Sama Dengan Alamat Pengiriman
+									</label>
+								</div>
+
+					            <div class="form-group">
+									<textarea class="form-control" rows="2" id="get_address1" placeholder="Address 1"></textarea>
+								</div>
+
+								<div class="form-group">
+									<textarea class="form-control" rows="2" id="get_address2" placeholder="Address 2"></textarea>
+								</div>
+
+								<div class="form-group">						
+									<input type="number" class="form-control" id="postcode" placeholder="Post Code">
+								</div>
+
+								<div class="form-group">
+									<select class="form-control" id="province_get">
+										<option disabled selected>-PROVINCE-</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+									</select>
+								</div>
 					        </div>
 						</div>
 					</div>
 					<div class="col-md-12">
-                        <a type="submit" class="btn btn-primary" href="{{ url('/do_payment') }}">Next Step</a>
+                        <a type="submit" class="btn btn-primary" href="payment_review">Next Step</a>
 					</div>
                     {!! Form::close() !!}
 				</form>

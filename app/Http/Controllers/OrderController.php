@@ -37,26 +37,4 @@ class OrderController extends Controller
             return view('delivery', compact('request'));
         }
     }
-    public function do_delivery(Request $request)
-    {
-        $rules = array(
-            'destination' => 'required',
-            'startdate' => 'required',
-            'enddate' => 'required',
-            'router_quantity' => 'required'
-            );
-        // dd(session());
-        // die();
-
-        $session = $request->session()->all();
-
-        $validator = Validator::make($session, $rules);
-        
-        if($validator->fails()){
-            return redirect('/')->withErrors($validator);
-        }
-        else {
-            return view('delivery', compact('request'));
-        }
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Session;
@@ -18,21 +19,21 @@ class DeliveryController extends Controller
 
     public function index()
     {
-        return view('delivery');
+
     }
 
-    public function payment_review()
+    public function do_delivery(Request $request)
     {
-        //add delivery address etc
         $rules = array(
             'destination' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
             'router_quantity' => 'required'
             );
-        // dd(session());
-        // die();
+
         $session = $request->session()->all();
+        // dd($session);
+        // die();
 
         $validator = Validator::make($session, $rules);
         
@@ -40,8 +41,7 @@ class DeliveryController extends Controller
             return redirect('/')->withErrors($validator);
         }
         else {
-            return view('payment', compact('request'));
-        }    
+            return view('delivery', compact('request'));
+        }
     }
-
 }

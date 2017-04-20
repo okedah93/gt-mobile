@@ -49,6 +49,9 @@
                             </ul>
                         </div>
                     @endif
+                    @if (Session::has('msg'))
+                       <div class="alert alert-info">{{ Session::get('msg') }}</div>
+                    @endif
                     <div class="col-md-4">
 
                             <div class="form-group{{ $errors->has('destination') ? ' has-error' : '' }}">

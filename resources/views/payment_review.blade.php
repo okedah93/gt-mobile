@@ -22,6 +22,7 @@
 						</div>
 					</div>
 					<div class="col-md-7 col-sm-7 col-xs-12">
+              		{!! Form::open(array('url' => 'do_booking', 'id' => 'form_data', 'method' => 'POST')) !!}
 						<div class="panel-group" id="accordion">
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -152,14 +153,16 @@
 					</div>
 					<div class="col-md-12">
 						<div class="checkbox">
-							<label><input type="checkbox" value="">I AGREE TO THE TERMS OF SERVICE AND WILL ADHERE TO THEM UNCONDITIONALLY. (READ THE TERMS OF SERVICE)</label>
+							<label><input type="checkbox" name="agree" id="agree" value="agree">I AGREE TO THE TERMS OF SERVICE AND WILL ADHERE TO THEM UNCONDITIONALLY. (READ THE TERMS OF SERVICE)</label>
 						</div>
 						<!-- <div class="checkbox">
 							<label><input type="checkbox" value="">Option 2</label>
 						</div> -->
-						<a type="submit" class="btn btn-primary" href="">submit</a>
-                    {!! Form::close() !!}
+						<div class="col-md-12">
+	                        <a type="submit" class="btn btn-primary" href="{{ url('/do_booking') }}">Submit Booking</a>
+						</div>
 					</div>
+                    {!! Form::close() !!}
 				</form>	
 			</div>	
 		</div>
