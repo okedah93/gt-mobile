@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 main-content-text">
 				<form class="row">
-                {!! Form::open(array('url' => 'payment_review', 'id' => 'form_data', 'method' => 'POST')) !!}
+                {!! Form::open(array('route' => 'payment.review', 'id' => 'form_data', 'method' => 'POST')) !!}
                 <!-- route nya blm di ganti -->
 					<div class="col-md-12">
 						<div class="book-review-title">
@@ -32,7 +32,7 @@
 							<div class="radio radio-primary">
 						            
 					            <label for="send_pick">
-					                <input type="radio" name="send_order" id="send_pick" value="pick_up">Pengambilan Sendiri di..
+					                <input type="radio" name="send_pick" id="send_pick" value="pick_up">Pengambilan Sendiri di..
 					            </label>
 
 								<div class="form-group">
@@ -46,11 +46,11 @@
 					        <div class="radio radio-primary">
 						            
 					            <label for="send_courier">
-					                <input type="radio" name="send_order" id="send_courier" value="courier">Kurir
+					                <input type="radio" name="send_order" id="send_courier" name="send_courier" value="courier">Kurir
 					            </label>
 
 					            <div class="form-group">
-									<textarea class="form-control" rows="2" id="send_address1" placeholder="Address 1"></textarea>
+									<textarea class="form-control" rows="2" id="send_address1" name="send_address1" placeholder="Address 1"></textarea>
 								</div>
 								<div class="form-group">
 									<textarea class="form-control" rows="2" id="send_address2" placeholder="Address 2"></textarea>
@@ -91,7 +91,7 @@
 					            <div class="radio radio-primary">
 						            
 						            <label for="get_courier">
-						                <input type="radio" name="send_order" id="send_courier" value="courier">Kurir
+						                <input type="radio" name="get_courier" id="get_courier" value="courier">Kurir
 						            </label>
 								</div>
 

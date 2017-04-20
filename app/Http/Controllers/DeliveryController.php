@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Session;
 use Debugbar;
 use Mail;
+use Input;
 
 class DeliveryController extends Controller
 {
