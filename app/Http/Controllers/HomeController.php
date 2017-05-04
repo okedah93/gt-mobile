@@ -14,7 +14,8 @@ class HomeController extends Controller
     }
     public function index()
     {
-        return View::make('home');
+        return view('home');
+
     }
 
     public function do_order(Request $request)
@@ -40,6 +41,7 @@ class HomeController extends Controller
                 'enddate'           =>  $request['enddate'],
                 'router_quantity'   =>  $request['router_quantity'],
             ]);
+
             return view('order', compact('request'));
         }
     }

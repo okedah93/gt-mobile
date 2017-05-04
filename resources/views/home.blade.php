@@ -39,7 +39,8 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 booking-here">
                 <div class="row">
-                    {!! Form::open(array('route' => 'do.order', 'id' => 'form_data', 'method' => 'POST')) !!}
+                    <form method="POST" action="{{ url('/order') }}" id="form_data">
+                        {{ csrf_field() }}
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -109,9 +110,9 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <input type="submit" class="btn btn-primary" href="{{ url('/do_order') }}"/>
+                            <input type="submit" class="btn btn-primary"/>
                         </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

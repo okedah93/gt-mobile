@@ -33,8 +33,6 @@ class DeliveryController extends Controller
             );
 
         $session = $request->session()->all();
-        // dd($session);
-        // die();
 
         $validator = Validator::make($session, $rules);
         

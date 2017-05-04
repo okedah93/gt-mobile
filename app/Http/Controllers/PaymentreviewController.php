@@ -25,8 +25,6 @@ class PaymentreviewController extends Controller
 
     public function do_payment(Request $request)
     {
-        dump($request);
-        die('a');
     	//add delivery address etc
         $rules = array(
             'destination' => 'required',
@@ -50,6 +48,8 @@ class PaymentreviewController extends Controller
 
     public function do_booking(Request $request)
     {
+        dump($request);
+        die();
     	//add delivery address etc
         $rules = array(
             'destination' => 'required',
@@ -59,7 +59,7 @@ class PaymentreviewController extends Controller
             );
         $session = $request->session()->all();
         // dd($session);
-        // die();
+
 
         $validator = Validator::make($session, $rules);
         
@@ -68,11 +68,12 @@ class PaymentreviewController extends Controller
         }
         else {
         	//insert database
+            // die;
             DB::table('orders')->insert(
                     [
                         'destination'       => $session['destination'],
                         'startdate'         => $session['startdate'],
-                        'enddate'           =>$session['enddate'],
+                        'enddate'           => $session['enddate'],
                         'router_quantity'   => $session['router_quantity'],
                         'send_method'       => $session['router_quantity'],
                         'send_courier'      => $session['router_quantity'],

@@ -18,6 +18,13 @@ class OrderController extends Controller
 
     public function index()
     {
+        return view('order');
+    }
+
+    public function do_delivery(Request $request)
+    {
+        dd($request);die();
+
         $rules = array(
             'destination' => 'required',
             'startdate' => 'required',

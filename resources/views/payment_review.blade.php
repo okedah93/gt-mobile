@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<div class="col-md-7 col-sm-7 col-xs-12">
-              		{!! Form::open(array('url' => 'do_booking', 'id' => 'form_data', 'method' => 'POST')) !!}
+              		{!! Form::open(array('routes' => 'do.booking2', 'id' => 'form_data', 'method' => 'POST')) !!}
 						<div class="panel-group" id="accordion">
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -35,12 +35,12 @@
 									<div class="panel-body">
 										<div class="form-group row">
 											<div class="col-md-6 col-sm-6 col-xs-12">
-												<label for="usr">Name</label>
-												<input type="text" class="form-control" id="usr">
+												<label for="name">Name</label>
+												<input type="text" class="form-control" id="name" name="name">
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-12">
-												<label for="usr">Phone</label>
-												<input type="text" class="form-control" id="usr">
+												<label for="phone">Phone</label>
+												<input type="text" class="form-control" id="phone" name="phone">
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-12">
 												<label for="usr">E-mail</label>
